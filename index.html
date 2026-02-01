@@ -124,7 +124,9 @@ button {
   color: red;
   pointer-events: none;
   animation: float 6s linear forwards;
+  z-index: 9999;
 }
+
 
 @keyframes float {
   from { transform: translateY(0); opacity: 1; }
@@ -174,7 +176,7 @@ button {
 
 <script>
 // contador
-const startDate = new Date("2024-09-14");
+const startDate = new Date("2025-09-14");
 const today = new Date();
 document.getElementById("days").innerText =
   Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
@@ -244,6 +246,28 @@ noBtn.addEventListener("click", () => {
 document.getElementById("yesBtn").addEventListener("click", () => {
   alert("Sabía que dirías que sí ❤️🥰");
 });
+  // ❤️ corazones flotando
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+
+  heart.style.left = Math.random() * window.innerWidth + "px";
+  heart.style.bottom = "-20px";
+  heart.style.fontSize = Math.random() * 12 + 14 + "px";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 6000);
+}
+
+// generar corazones continuamente
+setInterval(createHeart, 400);
+heart.style.left = Math.random() * window.innerWidth + "px";
+heart.style.top = window.innerHeight + "px";
+
 </script>
 
 </body>
