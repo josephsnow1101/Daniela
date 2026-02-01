@@ -267,6 +267,15 @@ function createHeart() {
 setInterval(createHeart, 400);
 heart.style.left = Math.random() * window.innerWidth + "px";
 heart.style.top = window.innerHeight + "px";
+  if (navigator.vibrate) {
+  navigator.vibrate([200, 100, 200]);
+}
+function heartExplosion() {
+  for (let i = 0; i < 40; i++) {
+    setTimeout(createHeart, i * 50);
+  }
+}
+
 
 </script>
 
