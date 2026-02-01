@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Para Daniela ❤️</title>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -70,6 +71,15 @@ body {
   opacity: 1;
   position: relative;
 }
+  .carousel {
+  aspect-ratio: 3 / 4; /* formato tipo foto móvil */
+}
+
+.carousel img {
+  object-fit: cover;
+  height: 100%;
+}
+
 
 
 .buttons {
@@ -164,6 +174,23 @@ body.night button {
   transform: translate3d(0, 0, 0);
   transition: opacity 1s ease, transform 0.2s ease-out;
 }
+  @media (max-width: 600px) {
+  .message {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .counter {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  button {
+    padding: 14px 24px;
+    font-size: 1.1rem;
+  }
+}
+
 
 
 </style>
