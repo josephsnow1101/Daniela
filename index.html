@@ -427,17 +427,6 @@ noBtn.addEventListener("click", moveNoButton);
 document.getElementById("yesBtn").addEventListener("click", () => {
   alert("Sabía que dirías que sí ❤️🥰");
 });
-const noBtn = document.getElementById("noBtn");
-let scale = 1;
-
-noBtn.addEventListener("click", () => {
-  scale -= 0.15;
-
-  if (scale <= 0.2) {
-    noBtn.style.display = "none";
-  } else {
-    noBtn.style.transform = `scale(${scale})`;
-  }
 });
 
 
