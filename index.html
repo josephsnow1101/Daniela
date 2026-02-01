@@ -231,16 +231,30 @@ setInterval(() => {
 
 // botón NO que se encoge
 const noBtn = document.getElementById("noBtn");
-let scale = 1;
+const container = document.querySelector(".valentine-buttons");
 
-noBtn.addEventListener("click", () => {
-  scale -= 0.15;
-  if (scale <= 0.2) {
-    noBtn.style.display = "none";
-  } else {
-    noBtn.style.transform = `scale(${scale})`;
-  }
+function moveNoButton() {
+  const maxX = container.clientWidth - noBtn.offsetWidth;
+  const maxY = container.clientHeight - noBtn.offsetHeight;
+
+  const randomX = Math.random() * maxX;
+  const randomY = Math.random() * maxY;
+
+  noBtn.style.left = randomX + "px";
+  noBtn.style.top = randomY + "px";
+
+  alert("Tramposita 😜, solo le puedes dar al sí ❤️");
+}
+
+// móvil
+noBtn.addEventListener("touchmove", (e) => {
+  e.preventDefault();
+  moveNoButton();
 });
+
+// respaldo
+noBtn.addEventListener("click", moveNoButton);
+
 
 // botón SÍ
 document.getElementById("yesBtn").addEventListener("click", () => {
