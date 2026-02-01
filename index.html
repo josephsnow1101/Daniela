@@ -30,6 +30,10 @@ body {
   text-align: center;
   padding: 40px 20px;
 }
+  <p style="margin-top:40px; color:white; font-size:0.9rem;">
+  Hecho con amor, solo para ti 💖
+</p>
+
 
 .message {
   color: white;
@@ -79,6 +83,13 @@ body {
   object-fit: cover;
   height: 100%;
 }
+  .phrase {
+  color: white;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  font-style: italic;
+}
+
 
 
 
@@ -213,6 +224,8 @@ body.night button {
     <img src="foto3.jpg">
     <img src="foto4.jpg">
   </div>
+  <p class="phrase" id="phrase"></p>
+
 
   <div class="buttons">
     <button onclick="prev()">⬅</button>
@@ -326,6 +339,19 @@ carousel.addEventListener('mouseleave', () => {
 
   img.style.transform = 'translate(0, 0) scale(1)';
 });
+  const phrases = [
+  "Eres mi lugar favorito 🤍",
+  "Mi mejor casualidad eres tú ✨",
+  "Elegirte fue la mejor decisión 💕",
+  "Contigo, todo es amor 🌙"
+];
+
+let p = 0;
+setInterval(() => {
+  document.getElementById("phrase").innerText = phrases[p];
+  p = (p + 1) % phrases.length;
+}, 4000);
+
 
 
 </script>
